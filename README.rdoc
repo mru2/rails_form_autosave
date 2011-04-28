@@ -1,3 +1,13 @@
 = RailsFormAutosave
 
 This project rocks and uses MIT-LICENSE.
+
+= Conception
+
+- Controller having save and get functions
+
+- inobtrusive js (harder...)
+
+- overriding of form_for helper...
+
+- beware when iding => special characters (get params existing in page)

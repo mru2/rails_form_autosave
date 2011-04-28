@@ -1,0 +1,4 @@
+**************************************
+Rails form autosave
+
+Only works with jquery. You have to include it in your application.

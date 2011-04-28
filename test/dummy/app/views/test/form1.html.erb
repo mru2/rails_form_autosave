@@ -1,0 +1,11 @@
+<h1>Test form 1</h1>
+
+<h2>Unressourceful form</h2>
+
+<%= form_for :test, :autosave => true do |f| %>
+  <%= f.text_field :test_text_field %>
+<% end %>
+
+<%= form_for :test do |f| %>
+  <%= f.text_field :test_text_field %>
+<% end %>
