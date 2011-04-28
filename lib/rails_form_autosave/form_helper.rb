@@ -21,9 +21,7 @@ module RailsFormAutosave::FormHelper
     
   # Generate a unique ID for this form
   def form_id(object, options)
-    url = request.url
-    # TODO : hash it (bijective relation)
-    "#{url}-#{object.to_s}"
+    Digest::SHA1.hexdigest("#{request.path}-#{object.to_s}")
   end
 end
 
