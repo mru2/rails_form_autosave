@@ -13,7 +13,9 @@ Jquery > 1.2
 = Installation
 
 gem 'rails_form_autosave' in your Gemfile
+
 rails g rails_form_autosave:install
+
 <%= javascript_include_tag 'rails_form_autosave' %>
 
 = Usage
