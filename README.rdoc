@@ -1,13 +1,29 @@
-= RailsFormAutosave
+= Rails Form Autosave
 
-This project rocks and uses MIT-LICENSE.
+This gem allows your forms to be continuously saved, so that any user can come back and finish completing it later without losing his changes.
 
-= Conception
+= Foreword
 
-- Controller having save and get functions
+This gem is still in early beta. It is not recommended to use it in a production environment
 
-- inobtrusive js (harder...)
+= Requirements
 
-- overriding of form_for helper...
+Jquery > 1.2
 
-- beware when iding => special characters (get params existing in page)
+= Installation
+
+gem 'rails_form_autosave' in your Gemfile
+rails g rails_form_autosave:install
+<%= javascript_include_tag 'rails_form_autosave' %>
+
+= Usage
+
+<%= form_for @user, :autosave => true %>
+
+= Known Issues
+
+Only saving <input> fields for now 
+
+= Coming soon
+
+Support for every field
