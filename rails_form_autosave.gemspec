@@ -1,6 +1,8 @@
 # Provide a simple gemspec so you can easily use your enginex
 # project in your rails apps through git.
 Gem::Specification.new do |s|
+  s.author = "David Ruyer"
+  s.email = "david.ruyer@gmail.com"
   s.name = "rails_form_autosave"
   s.summary = "Automatically save your form contents."
   s.description = "Automatically save your form contents."
