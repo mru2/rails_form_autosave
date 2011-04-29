@@ -1,6 +1,8 @@
 = Rails Form Autosave
 
-This gem allows your forms to be continuously saved, so that any user can come back and finish completing it later without losing his changes.
+This form allows a continuous saving of your forms, so that a user can navigate away from an unfinished form, and come back to the page later and have the form in the same state.
+
+It works by saving the field contents in the session, so the lifetime of the saved forms is the same as the session's.
 
 = Foreword
 
@@ -32,10 +34,10 @@ Include them in your application
 
 = Known Issues
 
-Only saving <input> fields for now 
-
-As said, the gem is still in very early alpha. Expect a lot of updates in the upcoming days.
+Let us know :)
 
 = Coming soon
 
-Support for every field
+Formtastic support
+Support for the form_tag helper
+
