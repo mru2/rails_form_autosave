@@ -12,19 +12,29 @@ Jquery > 1.2
 
 = Installation
 
-gem 'rails_form_autosave' in your Gemfile
+Add the gem to your Gemfile :
 
-rails g rails_form_autosave:install
+  gem 'rails_form_autosave'
+  
+Copy the javascript assets
 
-<%= javascript_include_tag 'rails_form_autosave' %>
+  rails g rails_form_autosave:install
+  
+Include them in your application
+
+  <%= javascript_include_tag 'rails_form_autosave' %>
 
 = Usage
 
-<%= form_for @user, :autosave => true %>
+  <%= form_for @user, :autosave => true %>
+    ...
+  <% end %>
 
 = Known Issues
 
 Only saving <input> fields for now 
+
+As said, the gem is still in very early alpha. Expect a lot of updates in the upcoming days.
 
 = Coming soon
 
