@@ -8,5 +8,5 @@ Gem::Specification.new do |s|
   s.summary = "Allows the user to navigate away from an unfinished form, and have it's fields restored when coming back."
   s.description = "Allows the user to navigate away from an unfinished form, and have it's fields restored when coming back."
   s.files = Dir["{app,lib,config,javascripts}/**/*"] + ["MIT-LICENSE", "Rakefile", "Gemfile", "README.rdoc"]
-  s.version = "0.0.4"
+  s.version = "0.0.5"
 end
