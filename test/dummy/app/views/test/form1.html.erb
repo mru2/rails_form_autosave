@@ -1,13 +1,35 @@
 <h1>Test form 1</h1>
 
-<h2>Unressourceful form</h2>
+<!-- <h2>Unressourceful form</h2>
 
 <%= form_for :test, :autosave => true do |f| %>
   <%= f.text_field :test_text_field %>
-<% end %>
+  <%= f.text_area :test_textarea %>
+  <%= f.select(:test_select, [['Foo', 1], ['Bar', 2]]) %>
+  <%= f.date_select :test_date %>
+  <%= f.check_box("foo") %>
+  <%= f.check_box("bar") %>  
+  <%= f.radio_button("test_radio", "foo") %>  
+  <%= f.radio_button("test_radio", "bar") %>  
+<% end %> -->
 
-<%= form_for :test do |f| %>
-  <%= f.text_field :test_text_field %>
+
+<h2>Checkbox form</h2>
+<%= form_for :checkbox_test, :autosave => true do |f| %>
+
+  <%= f.text_field :test %>
+
+  <%= f.label "foo" %>
+  <%= f.check_box("foo") %>
+
+  <%= f.label "bar" %>
+  <%= f.check_box("bar") %>  
+
+  <%= f.label "radio" %>
+  <%= f.radio_button("test_radio", "foo") %>  
+  <%= f.radio_button("test_radio", "bar") %>  
+
+
 <% end %>
 
 <button id="save_btn">Send</button>

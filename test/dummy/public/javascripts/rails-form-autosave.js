@@ -1,5 +1,7 @@
 (function($) {
 
+  var monitoredFields = 'input:visible, textarea:visible, select:visible';
+
   $.fn.formId = function() {
     return $(this).attr('autosave_id');
   }
@@ -10,7 +12,13 @@
     // Update the values
     $.getJSON('/rails_form_autosave/load/'+$(this).formId(), function(data){
       $.each(data,function(id, value){
-        form.find('#'+id).val(value);
+        input = form.find('#'+id);
+        if (input.is(':checkbox') || input.is(':radio')){
+          input.attr('checked',value);
+        }
+        else{
+          input.val(value);
+        }
       });
     });   
   }
@@ -20,10 +28,17 @@
     
     // Get the fields values
     var params = {};
-    form.find('input:visible').each(function(){
+    form.find(monitoredFields).each(function(){
       var input = $(this)
       if (input.attr('id').length > 0) {
-        params[input.attr('id')] = input.val();
+        if (input.is(':checkbox') || input.is(':radio')){
+          if (input.is(':checked')){
+            params[input.attr('id')] = 'checked';      
+          }
+        }
+        else{
+          params[input.attr('id')] = input.val();
+        }
       }
     });
     
@@ -42,9 +57,10 @@
     form.loadFields();
 
     // Save the fields when edited
-    form.find('input:visible').each(function(){
+    form.find(monitoredFields).each(function(){
       input = $(this);
       input.blur(function(){form.saveFields();});
+      input.click(function(){form.saveFields();});
     });
     
     // Clear the fields when the form is submitted
@@ -56,7 +72,11 @@
   // Main hook
   // If new forms are dynamically introduced into the DOM the .autosaveFields() 
   // method must be invoked manually on these forms
-  $(function() { $('form[autosave]').autosaveFields(); })
+  $(function() {
+    $('form[autosave]').each(function(){
+      $(this).autosaveFields();
+    })
+  })
   
 })(jQuery);
 
