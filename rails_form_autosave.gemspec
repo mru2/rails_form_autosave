@@ -1,8 +1,8 @@
 # Provide a simple gemspec so you can easily use your enginex
 # project in your rails apps through git.
 Gem::Specification.new do |s|
-  s.author = "David Ruyer"
-  s.email = "david.ruyer@gmail.com"
+  s.authors = ["David Ruyer", "Benjamin Roth"]
+  s.email = ["david.ruyer@gmail.com", "benjamin.roth@peachyweb.com"]
   s.homepage = "https://github.com/MrRuru/rails_form_autosave"
   s.name = "rails_form_autosave"
   s.summary = "Allows the user to navigate away from an unfinished form, and have it's fields restored when coming back."
