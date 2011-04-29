@@ -8,5 +8,5 @@ Gem::Specification.new do |s|
   s.summary = "Automatically save your form contents."
   s.description = "Automatically save your form contents."
   s.files = Dir["{app,lib,config,javascripts}/**/*"] + ["MIT-LICENSE", "Rakefile", "Gemfile", "README.rdoc"]
-  s.version = "0.0.2"
+  s.version = "0.0.3"
 end
