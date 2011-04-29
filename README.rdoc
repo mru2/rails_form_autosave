@@ -32,6 +32,12 @@ Include them in your application
     ...
   <% end %>
 
+You can also use it this way
+
+  <%= form_tag search_path, :autosave => true, :autosave_id => "search_form" %>
+    ...
+  <% end %>
+
 = Known Issues
 
 Let us know :)
@@ -39,5 +45,4 @@ Let us know :)
 = Coming soon
 
 Formtastic support
-Support for the form_tag helper
 

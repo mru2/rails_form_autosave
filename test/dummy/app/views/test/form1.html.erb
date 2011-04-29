@@ -43,6 +43,11 @@
   <%= f.text_field :test %>
 <% end %>
 
+<h2>Form tag</h2>
+<%= form_tag '/test', :autosave => true, :autosave_id => 'form' do %>
+  <%= text_field_tag :test %>
+<% end %>
+
 <button id="save_btn">Send</button>
 <button id="load_btn">Load</button>
 <div id="debug"></div>
