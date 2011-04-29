@@ -2,12 +2,13 @@
 
   var monitoredFields = 'input:visible, textarea:visible, select:visible';
 
+
   $.fn.formId = function() {
     return $(this).attr('autosave_id');
   }
    
   $.fn.loadFields = function() {
-    form = $(this)
+    var form = $(this)
     
     // Update the values
     $.getJSON('/rails_form_autosave/load/'+$(this).formId(), function(data){
@@ -24,7 +25,7 @@
   }
 
   $.fn.saveFields = function() {
-    form = $(this)
+    var form = $(this)
     
     // Get the fields values
     var params = {};
@@ -43,6 +44,12 @@
     });
     
     // Send them to be savec
+    $.ajaxSetup({
+      beforeSend: function(xhr) {
+        xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'));
+      }
+    });
+
     $.post('/rails_form_autosave/save/'+form.formId(), $.param({rails_form_autosave:params}));
   }
    
