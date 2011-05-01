@@ -24,7 +24,7 @@ Copy the javascript assets
   
 Include them in your application
 
-  <%= javascript_include_tag 'rails_form_autosave' %>
+  <%= javascript_include_tag 'rails-form-autosave' %>
 
 = Usage
 
