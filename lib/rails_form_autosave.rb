@@ -1,6 +1,10 @@
 module RailsFormAutosave
   class Engine < Rails::Engine
-
+    if Rails.env == "development"
+      initializer "static assets" do |app|
+        app.middleware.use ::ActionDispatch::Static, "#{root}/public"
+      end
+    end
   end
 end
 
