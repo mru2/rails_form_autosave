@@ -42,7 +42,7 @@
       var input = $(this)
       
       // Only the fields with an ID are being saved
-      if (input.attr('id').length > 0) {
+      if (input.attr('id') != undefined ) { //input.attr('id').length > 0
 
         // Once again, specific case for the checkboxes / radio buttons
         if (input.is(':checkbox') || input.is(':radio')){
