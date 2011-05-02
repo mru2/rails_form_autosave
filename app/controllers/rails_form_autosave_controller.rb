@@ -19,15 +19,12 @@ class RailsFormAutosaveController < ApplicationController
   def save
     @form_id = params[:id]
     @fields = params[:rails_form_autosave]
-        
     # Updates the form fields hash
-    rails_form_autosave_hash = {}
-    rails_form_autosave_hash.merge! session[:rails_form_autosave] if session[:rails_form_autosave]
-    rails_form_autosave_hash.merge!({@form_id => @fields})
-    
+    @rails_form_autosave_hash = {}
+    @rails_form_autosave_hash.merge! session[:rails_form_autosave] if session[:rails_form_autosave]
+    @rails_form_autosave_hash.merge!({@form_id => @fields})
     # Saves it in the session
-    session[:rails_form_autosave] = rails_form_autosave_hash
-
+    session[:rails_form_autosave] = @rails_form_autosave_hash
     render :text => "Saved form #{@form_id} : #{@fields.to_json}"
   end
   
