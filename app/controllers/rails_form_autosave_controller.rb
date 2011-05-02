@@ -6,7 +6,7 @@ class RailsFormAutosaveController < ApplicationController
   # Parameter : 
   #  - id(GET) : form ID
   # Returns a json of the saved form fields
-  def load
+  def load_form
     @form_id = params[:id]
     session[:rails_form_autosave] ||= {}
     render :text => session[:rails_form_autosave][@form_id].to_json
