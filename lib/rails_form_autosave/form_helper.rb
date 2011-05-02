@@ -23,7 +23,16 @@ module RailsFormAutosave::FormHelper
     
   # Generate a unique ID for a form (based on the page url, and the form name)
   def form_id(object, options)
-    Digest::SHA1.hexdigest("#{request.path}-#{object.to_s}")
+    # Get the name of the form
+    form_name = case object
+    when String, Symbol
+      object
+    else
+      options[:as] || ActiveModel::Naming.singular(object)
+    end
+    
+    # Generate a unique ID
+    Digest::SHA1.hexdigest("#{request.path}-#{form_name}")
   end
 end
 
